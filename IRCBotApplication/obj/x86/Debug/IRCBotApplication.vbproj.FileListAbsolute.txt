@@ -1,0 +1,13 @@
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\obj\x86\Debug\IRCBotApplication.Resources.resources
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\bin\Debug\IRCBotApplication.exe
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\bin\Debug\IRCBotApplication.pdb
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\bin\Debug\IRCBotApplication.xml
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\obj\x86\Debug\IRCBotApplication.exe
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\obj\x86\Debug\IRCBotApplication.xml
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\obj\x86\Debug\IRCBotApplication.pdb
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\bin\Debug\IRCToolKit.dll
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\bin\Debug\IRCToolKit.pdb
+C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\bin\Debug\IRCToolKit.xml
