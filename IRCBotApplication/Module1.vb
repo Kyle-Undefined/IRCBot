@@ -15,23 +15,25 @@ Module Module1
     'TO DO :
     ' 0: ADD Default Master Question
     ' 1: ADD Nick/Auth question
-    ' 2: ADD ABC GAME I(5)
-    ' 4: ADD Logging
-    ' 7: ADD GOOGLE SEARCH I(6)
-    ' 8: ADD 8BALL GAME I(7)
-    ' 9: ADD RAPE COMMAND I(8)
-    '10: ADD UPTIME COMMAND I(9)
-    '12: ADD ROULETTE GAME I(10)
-    '14: ADD MD5 HASH COMMAND I(11)
-    '15: ADD URBANDICTIONARY SEARCH I(12)
-    '16: ADD BING SEARCH I(13)
-    '17: ADD WIKI SEARCH I(14)
-    '19: ADD QUOTE COMMAND I(15)
-    '20: ADD Save setting to file and load if saved
-    '21: ADD XML Files instead of Text
-    '22: ADD Word censoring
+    ' 2: ADD Logging
+    ' 3: ADD Save setting to file and load if saved
+    ' 4: ADD Word censoring
+    ' 5: ADD Command counts, how many times the command has been called
+    ' 6: ADD Dynamic Command list, so commands can be added and edited without code change
 
-    '* == Important
+    'Commands to add :
+    ' 1: ADD ABC GAME
+    ' 2: ADD 8BALL GAME
+    ' 3: ADD UPTIME COMMAND
+    ' 4: ADD ROULETTE GAME
+    ' 5: ADD QUOTE COMMAND
+    ' 6: ADD BRUH COMMAND
+    ' 7: ADD FOLLOW COMMAND
+    ' 8: ADD PSN COMMAND
+    ' 9: ADD SHARE COMMAND
+    '10: ADD SLAP COMMAND
+    '11: ADD SOCIAL COMMAND
+    '12: ADD XBOX COMMAND
 
 #Region "Private WithEvents"
     Private WithEvents _irc As New ToolKit.IRC("Rawr! (RawrBot 1.0 Beta)") 'Declares a new IRC with its CTCP Version
@@ -46,12 +48,12 @@ Module Module1
     Private Channel As String
     Private CommandCharacter As String
     Private Lock As Boolean = True
-	Private Limit As Integer = 2
+    Private Limit As Integer = 1
     Private didRemove As Integer
     Private _path As String = My.Application.Info.DirectoryPath + "\Settings\"
-    Private Cmds() As String = {"Lock", "Quit", "Rawr", "Slap", "Char", "Abc", "List", "G", "8Ball", "Rape", "UpTime", "Masters", "Roulette", "MD5", "UD", "B", "Wiki", "Quote", "?Command"}
-    Private Args() As String = {"On/Off", "None", "None", "None", "Desired Char", "Guessed Letter", "None", "Search Term", "Question", "Victim", "None", "None", "Victim", "String", "Search Term", "Search Term", "Search Term", "Add/Remove/None", "None"}
-    Private I As Integer() = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+    Private Cmds() As String = {"Lock", "Quit", "Rawr", "Slap", "Char", "Abc", "List", "8Ball", "UpTime", "Masters", "Quote", "Bruh", "Follow", "PSN", "Share", "Social", "Xbox", "?Command"}
+    Private Args() As String = {"On/Off", "None", "None", "None", "Desired Char", "Guessed Letter", "None", "Question", "None", "None", "Add/Remove/None", "None", "None", "None", "None", "None", "None", "None"}
+    Private I As Integer() = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 #End Region
 
 #Region "Public Properties"
@@ -101,7 +103,6 @@ Module Module1
     End Sub
 
     Private Sub SetUpDirectory()
-		'SetupSettingsXML()
         If (Not Directory.Exists(Path)) Then
             Directory.CreateDirectory(Path)
         End If
@@ -113,26 +114,6 @@ Module Module1
         End If
         If (Not File.Exists(Path + "Quotes.txt")) Then
             File.AppendAllText(Path + "Quotes.txt", Nothing)
-        End If
-    End Sub
-
-    Private Sub SetupSettingsXML()
-        Dim xmlDoc As XmlDocument = New XmlDocument()
-
-        If Not File.Exists(Path + "Settings.xml") Then
-            Dim xmlWriter As XmlTextWriter = New XmlTextWriter(Path + "Settings.xml", System.Text.Encoding.UTF8)
-
-            xmlWriter.Formatting = Formatting.Indented
-            xmlWriter.WriteProcessingInstruction("xml", "version='1.0' encoding='UTF-8'")
-            xmlWriter.WriteStartElement("Settings")
-
-            xmlWriter.WriteElementString("Server", "")
-            xmlWriter.WriteElementString("Port", "")
-
-            xmlWriter.WriteEndElement()
-            xmlWriter.Close()
-
-            xmlDoc.Save(Path + "Settings.xml")
         End If
     End Sub
 #End Region
@@ -181,7 +162,7 @@ Module Module1
             Port = Console.ReadLine
             Console.Write("Nick : ")
             Nick = Console.ReadLine
-            Console.Write("Pass(If Needed) : ")
+            Console.Write("Pass : ")
             Pass = Console.ReadLine
             Console.Write("Channel : ")
             Channel = Console.ReadLine
@@ -400,26 +381,12 @@ Module Module1
                     _irc.SendNotice(user.Nick, "Command : Abc | Args : Desired letter to guess | Ex. $Abc s | This a random letter guessing game, can you guess the correct letter?")
                 Case "list"
                     _irc.SendNotice(user.Nick, "Command : List | Args : None | Ex. $List | This command lists all of the commands for the bot")
-                Case "g"
-                    _irc.SendNotice(user.Nick, "Command : G | Args : Search Term | Ex. $G IRC | Searches Google for the search term and returns the first result")
                 Case "8ball"
                     _irc.SendNotice(user.Nick, "Command : 8Ball | Args : Question | Ex. $8Ball Is IRC cool? | Uses the 8Ball method of randomly answering your question")
-                Case "rape"
-                    _irc.SendNotice(user.Nick, "Command : Rape | Args : Victim | Ex. $Rape Wizzup | Rapes the victime")
                 Case "uptime"
-                    _irc.SendNotice(user.Nick, "Command : UpTime | Args : None | Ex. $UpTime | Displays how long the bot has been up for")
+                    _irc.SendNotice(user.Nick, "Command : UpTime | Args : None | Ex. $UpTime | Displays how long the stream has been up for")
                 Case "masters"
                     _irc.SendNotice(user.Nick, "Command : Masters | Args : None | Ex. $Masters | Displays who the bots Masters are")
-                Case "roulette"
-                    _irc.SendNotice(user.Nick, "Command : Roulette | Args : None | Ex. $Roulette | Randomly kills someone from the IRC user list in the current channel")
-                Case "md5"
-                    _irc.SendNotice(user.Nick, "Command : MD5 | Args : String | Ex. $MD5 Hai | MD5 hashes the requested string and prints it out")
-                Case "ud"
-                    _irc.SendNotice(user.Nick, "Command : UD | Args : Search Term | Ex. $UD Rage | Searches Urban Dictionary for the search term entered and returns the first result")
-                Case "b"
-                    _irc.SendNotice(user.Nick, "Command : B | Args : Search Term | Ex. $B IRC | Searches Bing for the search term entered and returns the first result")
-                Case "wiki"
-                    _irc.SendNotice(user.Nick, "Command : Wiki | Args : Search Term | Ex. $Wiki IRC | Searches Wikipedia for the search term entered and returns the first result")
                 Case "quote"
                     _irc.SendNotice(user.Nick, "Command : Quote | Args : Add/Remove/None | Ex. $Quote Add <Camo`>Oh hai! | Adds/Removes a quote to the quote database, to add/remove quotes you must have Master privelages. If no arguments are passed then it displays a random quote that is stored.")
                 Case "command"

@@ -24,3 +24,14 @@ C:\Users\Kyle\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplica
 \\gfi.com\shares\Users\kharvison\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\obj\x86\Debug\IRC.Bot.Application.Resources.resources
 \\gfi.com\shares\Users\kharvison\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\obj\x86\Debug\GenerateResource.read.1.tlog
 \\gfi.com\shares\Users\kharvison\Documents\Visual Studio 2010\Projects\IRCBotSolution\IRCBotApplication\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\kyleu\Source\Repos\IRCBot\IRCBotApplication\obj\x86\Debug\IRC.Bot.Application.exe
+C:\Users\kyleu\Source\Repos\IRCBot\IRCBotApplication\obj\x86\Debug\IRC.Bot.Application.xml
+C:\Users\kyleu\Source\Repos\IRCBot\IRCBotApplication\obj\x86\Debug\IRC.Bot.Application.pdb
+C:\Users\kyleu\Source\Repos\IRCBot\IRCBotApplication\bin\Debug\IRC.Bot.Application.exe
+C:\Users\kyleu\Source\Repos\IRCBot\IRCBotApplication\bin\Debug\IRC.Bot.Application.pdb
+C:\Users\kyleu\Source\Repos\IRCBot\IRCBotApplication\bin\Debug\IRC.Bot.Application.xml
+C:\Users\kyleu\Source\Repos\IRCBot\IRCBotApplication\bin\Debug\IRC.Bot.ToolKit.pdb
+C:\Users\kyleu\Source\Repos\IRCBot\IRCBotApplication\bin\Debug\IRC.Bot.ToolKit.xml
+C:\Users\kyleu\Source\Repos\IRCBot\IRCBotApplication\obj\x86\Debug\IRC.Bot.Application.vbprojResolveAssemblyReference.cache
+C:\Users\kyleu\Source\Repos\IRCBot\IRCBotApplication\obj\x86\Debug\IRC.Bot.Application.Resources.resources
+C:\Users\kyleu\Source\Repos\IRCBot\IRCBotApplication\obj\x86\Debug\IRC.Bot.Application.vbproj.GenerateResource.Cache
